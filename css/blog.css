@@ -81,8 +81,9 @@ a{
     cursor: pointer;
 }
 #blogPage .container .row .post-box .read-more-btn{
-    background-image: linear-gradient(to right, #20422b, #acd6ba);
-    padding: 5px 12px 8px;
+    /* background-image: linear-gradient(to right, #20422b, #acd6ba); */
+    background-color: var(--green);
+    padding: 10px 20px;
     border-radius: 20px;
     line-height: 20px;
     font-size: 14px;
@@ -90,8 +91,10 @@ a{
     border: none;
 }
 #blogPage .container .row .post-box .read-more-btn:hover{
-    background-image:linear-gradient(to right, #5ca071, #eaf8ef);
+    /* background-image:linear-gradient(to right, #5ca071, #eaf8ef); */
+    background-color: transparent;
+    border: 2px solid var(--green);
     text-decoration: none;
-    color: black;
+    color: var(--green);
 }
   

@@ -1,0 +1,24 @@
+*{
+    font-family: var(--text);
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --title: "Playfair Display", sans-serif;
+    --text: "Roboto", sans-serif;
+    --green: #0e6621;
+    --blue: #f0e2e7;
+}
+#workPage .card{
+    height: 80vh;
+    background-image: url("/images/howitworks.png");
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#blogPage .card .card-text{
+    padding: 0!important;
+    bottom: 0;
+}

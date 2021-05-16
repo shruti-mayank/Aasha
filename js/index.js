@@ -1,3 +1,21 @@
+// Chatbot
+(function(d, m){
+    var kommunicateSettings = 
+        {"appId":"37e1ec4d80f2f3e763c824cb8d4317124","popupWidget":true,"automaticChatOpenOnNavigation":true};
+    var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+    s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+    var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+    window.kommunicate = m; m._globals = kommunicateSettings;
+})(document, window.kommunicate || {});
+
+var kommunicateSettings = {
+    "onInit": function() {
+        var css = ".mck-box-form.mck-row{height: 350px;}";        // Replace <YOUR_CSS_CODE_HERE> with the CSS you want to override.
+        Kommunicate.customizeWidgetCss(css);
+    },
+}
+
+// Navbar
 $(document).ready(function(){
     $(window).scroll(function(){
         // sticky navbar on scroll script
