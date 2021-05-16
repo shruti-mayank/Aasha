@@ -9,8 +9,8 @@ $(document).ready(function(){
     });
 
     // toggle menu/navbar script
-    let ul = document.querySelector('ul');
-    let li = document.querySelectorAll('li');
+    let ul = document.querySelector('.navbar-nav');
+    let li = document.querySelectorAll('.nav-link');
  
     li.forEach(el =>{
         el.addEventListener('click',function(){
