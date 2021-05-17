@@ -142,8 +142,11 @@
 
           <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
           <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
           <script> 
         
+      
+
           const firebaseConfig = {
   apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
   authDomain: "aasha-439d3.firebaseapp.com",
@@ -156,21 +159,48 @@
 };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  
 
-  register=()=>
+register=()=>
   {
+    if(document.getElementById("name").value.length == 0)
+{
+    alert("Please fill all the Input fields")
+   
+}
+else { 
+     user_name = document.getElementById("name").value 
+     console.log(user_name)
+     console.log(typeof user_name)
+  
      user_email = document.getElementById("email").value 
      user_pwd = document.getElementById("password").value
-      firebase.auth().createUserWithEmailAndPassword(user_email,user_pwd).then(function(resp){
+
+     firebase.auth().createUserWithEmailAndPassword(user_email,user_pwd).then(function(resp){
        console.log(resp) 
+
+      // var str = btoa(user_email)
+      //console.log(str)
+var res = user_email.replace(/[@.]/g,"");
+console.log(res)
+
+       firebase.database().ref("Users/"+res).set({
+  user_name: document.getElementById("name").value,
+  user_gender: document.getElementById("gender").value,
+  user_email: document.getElementById("email").value,
+  user_pwd: document.getElementById("password").value
+
+});
+
       alert("user created successfully")
+      window.location.replace("login.html");  //Redirecting to login page
      }).catch(function(err){ 
       console.log(err)
       console.log(err.message)
      }) 
+}
 
-     }
+  }
+  
 </script>
 
 

@@ -113,6 +113,54 @@
               <!-- <input type="submit" name="login" value="Login" id="login" class="p-2 px-4" style="background-color: var(--green); color: #fff; border: 0px!important;"> -->
               <button class="btn btn-large px-4 py-1" type="submit" onclick="login()">Login</button>
             </div>
+
+            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+            <script> 
+          
+        
+  
+            const firebaseConfig = {
+    apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+    authDomain: "aasha-439d3.firebaseapp.com",
+    databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+    projectId: "aasha-439d3",
+    storageBucket: "aasha-439d3.appspot.com",
+    messagingSenderId: "444861539687",
+    appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+    measurementId: "G-NHLQY6PMF4"
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig); 
+    </script>
+
+    <script>
+
+function login()
+{ 
+user_name = document.getElementById("email").value 
+user_pwd = document.getElementById("password").value 
+
+            firebase.auth().signInWithEmailAndPassword(user_name, user_pwd)
+            .then((userCredential) => {
+              // Signed in
+
+              alert("Logged in Successfully")
+              var user = userCredential.user;
+              // ...
+              window.location.replace("index.html");
+            })
+            .catch((error) => {
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              window.alert("Invalid Email or Password !")
+            });
+
+          }
+</script>
+
+
             <div class="col-4"></div>
           </div>
           <h1 style="font-family: 'Playfair Display', sans-serif; font-size: 18px; color: #011D30;" class="pl-5 ml-3 pt-4">Don't have an account?</h1>
