@@ -1,15 +1,36 @@
 *{
-    background-color: whitesmoke;
+    font-family: var(--text);
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --title: "Playfair Display", sans-serif;
+    --text: "Roboto", sans-serif;
+    --green: #0e6621;
+    --blue: #f0e2e7;
+}
+#aboutPage .card{
+    height: 80vh;
+    background-image: url("/images/about.jpg");
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#aboutPage .card .card-text{
+    padding: 0!important;
+    bottom: 0;
 }
 
-.container{
+/* .container{
     margin: 0px -8px 0 -10px;
     background-color: whitesmoke;
 }
 
 .banner{
     position: relative;
-}
+} */
 
 /* .link{
     background-color: rgb(255, 212, 226);
@@ -29,7 +50,7 @@ a:visited{
     color: rgb(255, 212, 226);
 } */
 
-.box-overbanner{
+/* .box-overbanner{
     position: absolute;
     background-color: rgb(255, 212, 226);
     height: 100px;
@@ -179,6 +200,6 @@ i:hover{
     margin-top: 800px;
     margin-bottom: -750px;
     text-align: center;
-}
+} */
 
 

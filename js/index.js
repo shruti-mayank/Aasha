@@ -1,19 +1,32 @@
 // Chatbot
-(function(d, m){
-    var kommunicateSettings = 
-        {"appId":"37e1ec4d80f2f3e763c824cb8d4317124","popupWidget":true,"automaticChatOpenOnNavigation":true};
-    var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-    s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-    var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-    window.kommunicate = m; m._globals = kommunicateSettings;
-})(document, window.kommunicate || {});
+// (function(d, m){
+//     var kommunicateSettings = 
+//         {"appId":"37e1ec4d80f2f3e763c824cb8d4317124","popupWidget":true,"automaticChatOpenOnNavigation":true};
+//     var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+//     s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+//     var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+//     window.kommunicate = m; m._globals = kommunicateSettings;
+// })(document, window.kommunicate || {});
 
-var kommunicateSettings = {
-    "onInit": function() {
-        var css = ".mck-box-form.mck-row{height: 350px;}";        // Replace <YOUR_CSS_CODE_HERE> with the CSS you want to override.
-        Kommunicate.customizeWidgetCss(css);
+(function(d, w, c) {
+    w.ChatraID = 'h2Woig7y2EmCrntZ7';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+window.ChatraSetup = {
+    colors: {
+        buttonText: '#f0f0f0', /* chat button text color */
+        buttonBg: '#0e6621'    /* chat button background color */
     },
-}
+    chatWidth: 350,
+    chatHeight: 500
+};
 
 // Navbar
 $(document).ready(function(){
@@ -72,10 +85,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 
          },step);
     }
-    counter("count1",0,150,0.00000000001);
-    counter("count2",0,590,0.00000000001);
-    counter("count3",0,97.4,0.00000000001);
-    counter("count4",0,10000,0.00000000001);
+    counter("count1",0,150,0.000001);
+    counter("count2",0,590,0.000001);
+    counter("count3",0,97,0.0001);
+    counter("count4",0,1000,0.00000000001);
 })
 
 // image slider

@@ -17,6 +17,11 @@ h1,h2,h3,h4,h5,h6{
   font-family: var(--title);
 }
 
+#mck-sidebox-launcher .km-chat-icon-sidebox{
+  height: 50px!important;
+   width: 50px!important;
+}
+
 /* topnav */
 #topbar {
     background: var(--green);
@@ -700,6 +705,9 @@ border-top-right-radius: 20px; */
   padding: 4px;
   width: calc(100% - 110px);
 }
+.footer form input[type="email"]:focus, .footer form input[type="email"]:active{
+  outline: 0!important;
+}
 
 .footer form input[type="submit"] {
   position: absolute;
@@ -717,7 +725,8 @@ border-top-right-radius: 20px; */
 }
 
 .footer form input[type="submit"]:hover {
-  background: #42b7f1;
+  background: var(--blue);
+  color: #111;
 }
 
 /*responsive*/
