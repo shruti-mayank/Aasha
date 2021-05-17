@@ -1,0 +1,205 @@
+*{
+    font-family: var(--text);
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --title: "Playfair Display", sans-serif;
+    --text: "Roboto", sans-serif;
+    --green: #0e6621;
+    --blue: #f0e2e7;
+}
+#aboutPage .card{
+    height: 80vh;
+    background-image: url("/images/about.jpg");
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#aboutPage .card .card-text{
+    padding: 0!important;
+    bottom: 0;
+}
+
+/* .container{
+    margin: 0px -8px 0 -10px;
+    background-color: whitesmoke;
+}
+
+.banner{
+    position: relative;
+} */
+
+/* .link{
+    background-color: rgb(255, 212, 226);
+    margin-top: 32px;
+    font-size: 25px;
+}
+
+a{
+    background-color: rgb(32, 8, 138);
+    text-decoration: none;
+    margin-left: 1050px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+a:visited{
+    color: rgb(255, 212, 226);
+} */
+
+/* .box-overbanner{
+    position: absolute;
+    background-color: rgb(255, 212, 226);
+    height: 100px;
+    width: 1200px;
+    margin-top: -120px;  
+    margin-left: 150px;  
+    padding: 8px;
+}
+
+h1{
+    width: 1200px;
+    position: absolute;
+    background-color: rgb(255, 212, 226) ;
+    margin: 10px;
+    font-size: 50px;
+    font-family: "Playfair Display";
+    text-align: center;
+}
+
+.content{
+    position: absolute;
+    height: 500px;
+    width: 1200px;
+    margin-top: 20px;  
+    margin-left: 150px; 
+    font-size: 22px;
+    padding: 8px;
+}
+
+.inter{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    margin-top: 580px;
+    background-color: blue;
+    text-align: center;
+}
+
+h2{
+    background-color: blue;
+    font-size: 60px;
+    margin-top: -10px;
+}
+
+.des{
+    background-color: blue;
+    margin-top: -50px;
+    font-size: 20px;
+}
+
+.button-invest{
+    background-color: blue;
+}
+
+button{
+    width: 110px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-top: 40px;
+}
+
+.team{
+    font-size: 70px;
+    height: 50px;
+    background-color: aqua;
+    padding: 40px;
+}
+
+.team-box{
+    background-color: whitesmoke;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 10px;
+    margin: 900px 20px 0px 15px;
+}
+
+.card{
+    margin-left: 40px;
+    background-color:rgb(255, 212, 226) ;
+}
+
+.content p{
+    position: absolute ;
+    color: #002927;
+    margin: 30px 0 0 5px;
+    padding: 3px;
+    height: auto;
+}
+
+.para p{
+    text-align: center ;
+    background-color: rgb(255, 212, 226);
+    color: #002927;
+    margin-top: 75px;
+}
+
+h3{
+    margin-top: -10px;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(255, 212, 226);
+}
+
+h4{
+    margin-top: -10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(255, 212, 226)
+}
+
+.card-para{
+    background-color: rgb(255, 212, 226);
+    padding: 6px;
+}
+
+.whatsapp{
+    padding: 15px;
+    font-size: 30px;
+    margin-left: 55px;
+    width: 180px;
+
+}
+
+i{
+    margin-left: 10px;
+    font-size: 40px;
+}
+
+.whatsapp p{
+    margin-top: -35px;
+    text-align: right;
+    height: 5px;
+}
+
+.whatsapp:hover{
+    background-color: green;
+}
+
+i:hover{
+    background-color: green;
+}
+
+.team{
+    margin-top: 800px;
+    margin-bottom: -750px;
+    text-align: center;
+} */
+
+

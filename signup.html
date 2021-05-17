@@ -140,6 +140,7 @@
 
 
 
+<<<<<<< HEAD
           <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
           <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
           <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
@@ -157,6 +158,22 @@
   appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
   measurementId: "G-NHLQY6PMF4"
 };
+=======
+      <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+      <script> 
+    
+      const firebaseConfig = {
+        apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+        authDomain: "aasha-439d3.firebaseapp.com",
+        databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+        projectId: "aasha-439d3",
+        storageBucket: "aasha-439d3.appspot.com",
+        messagingSenderId: "444861539687",
+        appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+        measurementId: "G-NHLQY6PMF4"
+      };
+>>>>>>> 562490a051bab24d34e69338d33e484360c52a4a
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
@@ -195,19 +212,13 @@ console.log(res)
       window.location.replace("login.html");  //Redirecting to login page
      }).catch(function(err){ 
       console.log(err)
-      console.log(err.message)
+      alert(err.message)
      }) 
 }
 
   }
   
 </script>
-
-
-
-
-
-
 
 <div class="col-4"></div>
         </div>
