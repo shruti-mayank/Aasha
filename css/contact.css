@@ -1,0 +1,69 @@
+*{
+    font-family: var(--text);
+}
+* {
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --title: "Playfair Display", sans-serif;
+    --text: "Roboto", sans-serif;
+    --green: #0e6621;
+    --blue: #f0e2e7;
+}
+#contactPage .card img{
+    height: 80vh;
+    background-image: url("/images/contact.jpg");
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#contactPage .flex-container{
+    display: flex;
+}
+
+#contactPage .contact-info{
+    background-color: lavenderblush;
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+}
+#contactPage .form{
+    background-color: #0e6621;
+    padding: 50px 30px;
+}
+#contactPage input[type=text], select, textarea {
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0e6621;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+#contactPage input[type=submit] {
+    background-color: #fff;
+    color: #0e6621;
+    padding: 14px 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+#contactPage  input[type=submit]:hover {
+    background-color:#0e6621 ;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+ }
+ @media (max-width: 800px) {
+    #contactPage .flex-container {
+      flex-direction: column;
+    }
+
+

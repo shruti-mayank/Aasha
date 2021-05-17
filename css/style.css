@@ -307,7 +307,8 @@ h1,h2,h3,h4,h5,h6{
 #gallery .container{
   display: flex;
   align-items: center;
-  /* min-height: 100vh; */
+  position: relative;
+  /*min-height: 100vh;*/ 
 }
 #gallery .wrapper{
   width: 100%;
@@ -342,6 +343,31 @@ h1,h2,h3,h4,h5,h6{
 }
 #gallery .owl-dot:hover,#gallery .owl-dot.active{
   background: #002927!important;
+}
+ #gallery .overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #002927;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+#gallery .overlay .text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+#gallery .container:hover .overlay {
+  width: 100%;
 }
 #gallery .card{
   transition: 1s;
