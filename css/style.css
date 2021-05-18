@@ -310,6 +310,9 @@ h1,h2,h3,h4,h5,h6{
   position: relative;
   /*min-height: 100vh;*/ 
 }
+#gallery h4{
+  color: #fff;
+}
 #gallery .wrapper{
   width: 100%;
 }
@@ -344,18 +347,20 @@ h1,h2,h3,h4,h5,h6{
 #gallery .owl-dot:hover,#gallery .owl-dot.active{
   background: #002927!important;
 }
- #gallery .overlay{
+ #gallery .card .overlay{
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #002927;
+  background-color:var(--green);
+  opacity: 0.6;
   overflow: hidden;
   width: 0;
   height: 100%;
   transition: .5s ease;
+  padding: auto 20px;
 }
-#gallery .overlay .text {
+#gallery .card .overlay .text {
   color: black;
   font-size: 20px;
   position: absolute;
@@ -365,8 +370,9 @@ h1,h2,h3,h4,h5,h6{
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   white-space: nowrap;
+  padding: auto 20px;
 }
-#gallery .container:hover .overlay {
+#gallery .card:hover .overlay {
   width: 100%;
 }
 #gallery .card{
@@ -441,7 +447,7 @@ border-top-right-radius: 20px; */
   font-family: var(--text);
   color: var(--green);
   border-bottom: 2px solid var(--green);
-  width: 25%;
+  width: 45%;
   margin-bottom: 15px;
 }
 #blogs .btn{
@@ -534,9 +540,12 @@ border-top-right-radius: 20px; */
 }
 #testimonial .card .card-text h2{
     padding-top: 50px;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     font-family: var(--title);
     color: #fff;
+}
+#testimonial .card .card-text h4{
+  color: var(--blue);
 }
 #testimonial .card .card-text p{
     font-family: var(--text);

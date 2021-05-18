@@ -1,0 +1,114 @@
+*{
+    font-family: var(--text);
+}
+a{
+    text-decoration: none;
+}
+:root{
+    --title: "Playfair Display", sans-serif;
+    --text: "Roboto", sans-serif;
+    --green: #0e6621;
+    --blue: #f0e2e7;
+}
+
+#investPage .card{
+    height: 80vh;
+    background-image: url("/images/investBanner.jpg");
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#investPage .card .card-text{
+    padding: 0!important;
+    bottom: 0;
+}
+
+#investee .card{
+    border: none!important;
+}
+#investee .card .card-img-top{
+    overflow: hidden;
+}
+#investee .card .card-img-top img{
+    transition: ease-in-out 0.3s;
+    height: 230px;
+}
+#investee .card:hover img{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+#investee .card:hover .card-text{
+    background-color: #78e2a112;
+    color: #111!important;
+}
+#investee .card:hover .card-text .blogDate{
+    color: #111;
+    border-bottom: #111 2px solid;
+}
+#investee .card .card-img{
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+}  
+#investee .card .card-text{
+    background-color: #f2f2f5;
+    padding: 10px 20px;
+}
+#investee .card .card-text:hover{
+    background-color:var(--blue);
+    cursor: pointer;
+}
+/* #investee .card .card-text:hover .blogDate{
+    color: #111;
+    border-bottom: #111 2px solid;
+} */
+#investee .card .card-text h2{
+    font-family: var(--text);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+/* #investee .card .card-text p.blogDate{
+    font-family: var(--text);
+    color: var(--green);
+    border-bottom: 2px solid var(--green);
+    width: 25%;
+    margin-bottom: 15px;
+} */
+#investee form {
+    background: #fff;
+    padding: 3px 8px;
+    position: relative;
+    border-radius: 4px;
+    font-family: var(--text);
+  }
+  
+#investee form input[type="text"] {
+    border: 0;
+    padding: 4px;
+    width: calc(100% - 110px);
+  }
+#investee form input[type="text"]:focus,#investee form input[type="text"]:active{
+    outline: 0!important;
+}
+  
+#investee form input[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    bottom: 0;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    padding: 0 10px;
+    background: var(--green);
+    color: #fff;
+    transition: 0.3s;
+    border-radius: 0 4px 4px 0;
+  }
+  
+#investee form input[type="submit"]:hover {
+    background: var(--blue);
+    border: 2px solid var(--green);
+    border-radius: 5px;
+    color: var(--green);
+  }

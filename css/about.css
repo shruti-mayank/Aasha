@@ -22,6 +22,75 @@ a{
     padding: 0!important;
     bottom: 0;
 }
+#aboutInfo h2{
+    font-weight: 600;
+}
+#aboutInfo ul li{
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+#investment{
+    background-color: var(--green);
+}
+#investment .btn{
+    background-color: #002927;
+    color: #fff;
+    font-size: 20px;
+    font-family: var(--text);
+}
+#investment .btn:hover{
+    box-shadow: 2px 2px 2px #748a88;
+}
+
+#team .card{
+    border: none!important;
+}
+#team .card .card-img-top{
+    overflow: hidden;
+}
+#team .card .card-img-top img{
+    transition: ease-in-out 0.3s;
+    height: 230px;
+}
+#team .card:hover img{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+#team .card:hover .card-text{
+    background-color: #78e2a112;
+    color: #111!important;
+}
+#team .card .card-img{
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+}  
+#team .card .card-text{
+    background-color: #f2f2f5;
+    padding: 10px 20px;
+}
+#team .card .card-text h4{
+    font-size: 20px;
+}
+#team .card .card-text p{
+    color: var(--green);
+     font-size: 16px;
+}
+#team .card .card-text .btn{
+    background-color: var(--green);
+    color: #fff;
+    font-size: 17px;
+}
+#team .card .card-text .btn:hover{
+    box-shadow: 3px 3px 3px #ccc;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+#team .card .card-text:hover{
+    background-color:var(--blue);
+    cursor: pointer;
+}
 
 /* .container{
     margin: 0px -8px 0 -10px;

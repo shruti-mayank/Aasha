@@ -1,8 +1,6 @@
-*{
-    font-family: var(--text);
-}
 * {
     box-sizing: border-box;
+    font-family: var(--text);
 }
 a{
     text-decoration: none;
@@ -13,7 +11,7 @@ a{
     --green: #0e6621;
     --blue: #f0e2e7;
 }
-#contactPage .card img{
+#contactPage .card{
     height: 80vh;
     background-image: url("/images/contact.jpg");
     opacity: 0.9;
@@ -21,19 +19,24 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#investPage .card .card-text{
+    padding: 0!important;
+    bottom: 0;
+}
 #contactPage .flex-container{
     display: flex;
 }
 
 #contactPage .contact-info{
-    background-color: lavenderblush;
+    /* background-color: lavenderblush; */
     text-align: center;
     padding: 30px;
     font-size: 20px;
 }
 #contactPage .form{
     background-color: #0e6621;
-    padding: 50px 30px;
+    padding: 30px 50px;
 }
 #contactPage input[type=text], select, textarea {
     background-color: white;
@@ -49,7 +52,7 @@ a{
 #contactPage input[type=submit] {
     background-color: #fff;
     color: #0e6621;
-    padding: 14px 50px;
+    padding: 8px 40px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -60,10 +63,10 @@ a{
     color: white;
     border: 1px solid white;
     border-radius: 50px;
+    font-size: 18px;
  }
  @media (max-width: 800px) {
     #contactPage .flex-container {
       flex-direction: column;
     }
-
-
+}
