@@ -104,20 +104,20 @@ h1,h2,h3,h4,h5,h6{
 }
 #bannerCarousel .carousel-inner .card .img-1{
   display: flex;
-  background: url("/images/invest.png") no-repeat center;
+  background: url("images/invest.png") no-repeat center;
   color: #111;
   background-size: cover;
   background-attachment: fixed;
   background-color: #111;
 }
 #bannerCarousel .carousel-inner .card .img-2{
-  background: url("/images/work.png") no-repeat center;
+  background: url("images/work.png") no-repeat center;
   color: #111;
   background-size: cover;
   background-attachment: fixed;
 }
 #bannerCarousel .carousel-inner .card .img-3{
-  background: url("/images/piggy.png") no-repeat center;
+  background: url("images/piggy.png") no-repeat center;
   color: #111;
   background-size: cover;
   background-attachment: fixed;
