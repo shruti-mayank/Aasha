@@ -180,7 +180,7 @@ else {
 
       // var str = btoa(user_email)
       //console.log(str)
-var res = user_email.replace(/[@.]/g,"");
+var res = user_email.replace(/[.]/g,"-");
 console.log(res)
 
        firebase.database().ref("Users/"+res).set({
@@ -192,7 +192,7 @@ console.log(res)
 });
 
       alert("user created successfully")
-      window.location.replace("login.html");  //Redirecting to login page
+    //  window.location.replace("login.html");  //Redirecting to login page
      }).catch(function(err){ 
       console.log(err)
       alert(err.message)
