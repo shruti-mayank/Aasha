@@ -1,0 +1,152 @@
+
+<div class="jumbotron-fluid" id="navbar">
+    <!-- Top Nav -->
+    <section id="topbar" class="d-flex align-items-center sticky-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+            <i class="fas fa-envelope d-flex align-items-center"><a href="mailto:shrutimayank1202@gmail.com">&nbsp;aasha@gmail.com</a></i>
+            <i class="fas fa-phone d-flex align-items-center ms-4"><span>&nbsp;+91 999999999</span></i>
+            </div>
+            <div class="social-links d-none d-md-flex align-items-center">
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img src="images/logo3.png" class="img-fluid img-responsive" style="height: 50px; width: 120px; border-radius: 20px;" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item nav-link">
+                <!-- <a class="nav-link" <%if(active=="index"){%>class="active"<%}%> href="/">Home</a> -->
+                <a <%if(active=="index"){%>class="active"<%}%> href="/">Home</a>
+                </li>
+                <li class="nav-item nav-link">
+                <a <%if(active=="work"){%>class="active"<%}%> href="/work">How it Works</a>
+                </li>                  
+                <li class="nav-item nav-link">
+                <a <%if(active=="invest"){%>class="active"<%}%> href="/invest">Invest</a>
+                </li>        
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Covid
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="https://external.sprinklr.com/insights/explorer/dashboard/601b9e214c7a6b689d76f493/tab/0?id=DASHBOARD_601b9e214c7a6b689d76f493&home=1" target="_blank">Resources</a></li>
+                    <li><a class="dropdown-item" href="https://rzp.io/l/3NM5CSFnjR">Donation</a></li>
+                </ul>
+                </li>         
+                <!-- <li class="nav nav-link-item">
+                <a href="#">Covid Donation</a>
+                </li>                  -->
+                <li class="nav-item nav-link">
+                <a <%if(active=="blog"){%>class="active"<%}%> href="/blog">Blogs</a>
+                </li>                 
+                <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+                <script> 
+                const firebaseConfig = {
+                    apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+                    authDomain: "aasha-439d3.firebaseapp.com",
+                    databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+                    projectId: "aasha-439d3",
+                    storageBucket: "aasha-439d3.appspot.com",
+                    messagingSenderId: "444861539687",
+                    appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+                    measurementId: "G-NHLQY6PMF4"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+
+                // firebase.auth().onAuthStateChanged(function(user){
+                //   if(!user)
+                //   {
+                //     `<li class="nav-item" nav-link>
+                //       <a href="login.html">Login</a>
+                //     </li> 
+                //     <li class="nav-item"> nav-link
+                //       <a href="signup.html">Signup</a>
+                //     </li>`
+                //   }
+                //   else{
+                //     `<li class="nav-item dropdown">
+                //       <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                //         <i class ="fas fa-user"></i>
+                //       </a>
+                //       <ul class="dropdown-menu" aria-labelledby="navbarDrop">
+                //         <li><a class="dropdown-item" href="#">KYC</a></li>
+                //         <li><a class="dropdown-item" href="#">Logout</a></li>
+                //       </ul>
+                //     </li>`
+                //   }
+                // });
+                //   auth.onAuthStateChanged(user => {
+                //     if (user) {
+                //       <li class="nav-item dropdown">
+                //         <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                //           <i class ="fas fa-user"></i>
+                //         </a>
+                //         <ul class="dropdown-menu" aria-labelledby="navbarDrop">
+                //           <li><a class="dropdown-item" href="#">KYC</a></li>
+                //           <li><a class="dropdown-item" href="#">Logout</a></li>
+                //         </ul>
+                //       </li>
+                //     } else {
+                //       `<li class="nav-item" nav-link>
+                //         <a href="login.html">Login</a>
+                //       </li> 
+                //       <li class="nav-item"> nav-link
+                //         <a href="signup.html">Signup</a>
+                //       </li>`
+                //     }
+                //   });
+                // </script>
+                <!-- {{#if isAuthenticated}} -->
+                <li class="nav-item dropdown signed">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class ="fas fa-user"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDrop">
+                      <li><a class="dropdown-item" href="#">KYC</a></li>
+                      <li><a class="dropdown-item" href="/">Logout</a></li>
+                  </ul>
+                </li>
+                <!-- {{else}} -->
+                <li class="nav-item nav-link unsigned">
+                <a href="/login">Login</a>
+                </li> 
+                <li class="nav-item nav-link unsigned">
+                <a href="/signup">Signup</a>
+                </li>
+                <!-- {{/if}}  -->
+                
+            </ul>
+            <script>
+            //   firebase.auth().onAuthStateChanged(function(user){
+            //     if(user){
+            //       document.getElementsByClassName("signed").style.display = "block";
+            //       document.getElementsByClassName("unsigned").style.display = "none";
+            //     }
+            //     else{
+            //       document.getElementsByClassName("signed").style.display = "none";
+            //       document.getElementsByClassName("unsigned").style.display = "block";
+            //     }
+            //   });
+            </script>
+            <!-- <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+            </div>
+        </div>
+    </nav>
+</div>

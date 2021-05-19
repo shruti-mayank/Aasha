@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- For icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- title -->
+  <link rel="icon" href="/images/favicon.png" sizes="256x256">
+  <title>Aasha | Palette of Hope</title>
+
+  <style type="text/css">
+    * {
+      font-family: var(--text);
+    }
+    a{
+      text-decoration: none!important;
+      font-family: var(--title);
+      color: #111;
+    }
+    :root {
+      --title: "Playfair Display", sans-serif;
+      --text: "Roboto", sans-serif;
+      --green: #0e6621;
+      --blue: #f0e2e7;
+    }
+
+    label,
+    input[type="submit"] {
+      font-family: 'Playfair Display', sans-serif;
+      font-size: 18px;
+    }
+
+    .col-lg-6 input #login:hover {
+      background-color: #f0f0f0;
+      color: var(--green);
+    }
+
+    input {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+    }
+
+    .col-lg-6 a button,
+    .col-lg-6 button {
+      font-family: 'Oswald', sans-serif;
+      background-color: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 18px;
+    }
+
+    .col-lg-6 a button:hover,
+    .col-lg-6 button:hover {
+      background-color: #fff;
+      border: 2px solid var(--green);
+      color: var(--green);
+      padding: 9px 17px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Banner Start -->
+      <div class="col-lg-5 p-5"
+        style="background-image: linear-gradient(to right, #002927, var(--green), #8ABA9E); color: #fff; height: 100vh;">
+
+        <a href="/" class="nav-link pb-5 pl-md-5 ml-md-5"><img src="images/logo3.png" class="img-fluid"
+            width="250" height="150" style="border-radius: 20px;" /></a>
+        <div class="row">
+          <div class="col-2">
+            <i class="fas fa-hand-holding-usd" style="font-size: 30px;"></i>
+          </div>
+          <div class="col-10">
+            <h5>Invest in the small-scale business startups</h5>
+          </div>
+        </div>
+        <div class="row pt-5 mt-4">
+          <div class="col-2">
+            <i class="fas fa-hands-helping" style="font-size: 30px;"></i>
+          </div>
+          <div class="col-10">
+            <h5>Support investees to build their dreams</h5>
+          </div>
+        </div>
+        <div class="row pt-5 mt-4">
+          <div class="col-2">
+            <i class="fas fa-percent" style="font-size: 30px;"></i>
+          </div>
+          <div class="col-10">
+            <h5>Get repaid along with interest</h5>
+          </div>
+        </div>
+        <div class="row pt-5 mt-4">
+          <div class="col-2">
+            <i class="fas fa-sync-alt" style="font-size: 30px;"></i>
+          </div>
+          <div class="col-10">
+            <h5>Reinvest your repayments and gain profit</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Banner End -->
+      <div class="col-lg-1"></div>
+      <!-- Login Start -->
+      <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <h1 style="font-family: var(--title); font-size: 40px; color: var(--green);" class="pl-5 ml-2 pt-5">Register
+        </h1>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-7 mt-3">
+            <!-- <label>Name</label>
+            <input type="text" placeholder="Enter your Name" class="form-control" id="name" required><br>
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select><br> -->
+            <label>Email</label>
+            <input type="text" placeholder="Enter your Email" class="form-control" id="email" required><br>
+            <label>Password</label>
+            <input type="password" placeholder="Enter Password" class="form-control" id="password" required><br>
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm Password" class="form-control" id="confirmPassword" required><br>
+         <!--     <input type="submit" name="register" value="Register" id="register" class="p-2 px-4" style="background-color: #255B8A; color: #fff; border: 0px!important;"> --> 
+            <button class="btn btn-large px-4 py-1" type="submit" id="submitBtn" onclick="register()">Register</button>
+          </div>
+
+
+
+
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+          <script> 
+          const firebaseConfig = {
+              apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+              authDomain: "aasha-439d3.firebaseapp.com",
+              databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+              projectId: "aasha-439d3",
+              storageBucket: "aasha-439d3.appspot.com",
+              messagingSenderId: "444861539687",
+              appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+              measurementId: "G-NHLQY6PMF4"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+    register=()=>
+      {
+      user_pwd=  document.getElementById("password").value
+      user_cpwd=  document.getElementById("confirmPassword").value
+          if( user_pwd == user_cpwd)
+      {
+        
+        
+          user_email = document.getElementById("email").value 
+          user_pwd = document.getElementById("password").value
+
+          firebase.auth().createUserWithEmailAndPassword(user_email,user_pwd).then(function(resp){
+            console.log(resp) 
+
+            // var str = btoa(user_email)
+            //console.log(str)
+        /*  var res = user_email.replace(/[.]/g,"-");
+          console.log(res)
+
+                firebase.database().ref("Users/"+res).set({
+            user_name: document.getElementById("name").value,
+            user_gender: document.getElementById("gender").value,
+            user_email: document.getElementById("email").value,
+            user_pwd: document.getElementById("password").value
+
+          });
+          */
+
+          alert("user created successfully")
+          window.location.href ="userinfo.html";  
+        }).catch(function(err){ 
+          console.log(err)
+          alert(err.message)
+        }) 
+      }
+      else{
+        alert("The password didn't match! Please try again")
+      }
+    }
+  
+</script>
+
+<div class="col-4"></div>
+        </div>
+        <h1 style="font-family: var(--title); font-size: 18px; color: #011D30;" class="pl-md-5 ml-md-2 pt-4">Already have an
+          account? <span><a href="/login">Login</a></span></h1>
+        <!-- <a href="login.html" class="pl-md-5 ml-md-2 pt-2"><button class="btn btn-large px-4 py-1">Login</button></a> -->
+      </div>
+      <!-- Login End -->
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

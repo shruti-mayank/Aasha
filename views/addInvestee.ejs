@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+
+    <!-- Owl Carousel --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!-- title -->
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <title>Aasha | Palette of Hope</title>
+    <style>
+        form{
+            background-color: var(--blue);
+            margin-top: -30px;
+            position: relative;
+        }
+        label{
+            font-family: var(--title);
+            font-size: 20px;
+        }
+        .btn{
+            background-color: var(--green);
+            color: #fff;
+        }
+    </style>
+
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <div class="jumbotron-fluid" id="blogPage">
+        <div class="card">
+            <!-- <div class="card-img"><img src="/images/blogBanner.jpg" class="img-fluid img-responsive" alt=""></div> -->
+            <!-- <img src="images/piggy.png" class="d-block w-100 card-img img-fluid img-responsive" alt="..."> -->
+            <div class="container d-flex flex-column justify-content-end card-text card-img-overlay text-center">
+            <div class="text py-2 mb-5" style="text-align: center; background-color: var(--blue);">
+                <header class="section-header">
+                <h2 style="font-size: 50px;" class="py-4">Add Investee</h2>
+                <!-- <p></p> -->
+                </header>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <div class="container p-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Name Of Investee</label>
+                    <input type="text" placeholder="Enter Investee's Name" class="form-control" id="name" required><br>
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="Enter Investee's Phone number" class="form-control" id="phone" required><br>
+                </div>
+                <div class="col-md-6">
+                    <label>Amount Required</label>
+                    <input type="text" placeholder="Enter required amount" class="form-control" id="amount" required><br>
+                    <label>Interest to be paid</label>
+                    <input type="text" placeholder="Enter interest that can be paid by investee" class="form-control" id="interest" required><br>
+                </div> 
+            </div>
+            <label>Address Of Investee</label>
+                <input type="text" placeholder="Enter Investee's Address" class="form-control" id="address" required><br>
+            <label>Work Description</label>
+            <textarea name="work" id="work" class="form-control" style="width: 100%;"></textarea><br>
+            <!--     <input type="submit" name="register" value="Register" id="register" class="p-2 px-4" style="background-color: #255B8A; color: #fff; border: 0px!important;"> --> 
+            <button class="btn btn-large px-4 py-1" type="submit" id="submitBtn" onclick="investee()">Post</button>
+   
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+          <script> 
+          const firebaseCon = {
+    apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+    authDomain: "aasha-439d3.firebaseapp.com",
+    databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+    projectId: "aasha-439d3",
+    storageBucket: "aasha-439d3.appspot.com",
+    messagingSenderId: "444861539687",
+    appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+    measurementId: "G-NHLQY6PMF4"
+};
+
+firebase.initializeApp(firebaseCon);
+</script>
+
+<script>
+
+
+// Initialize Firebase
+
+
+          function investee()
+    {
+        investee_name= document.getElementById("name").value
+        investee_address= document.getElementById("address").value
+        investee_amount= document.getElementById("amount").value
+        investee_interest= document.getElementById("interest").value
+        investee_work= document.getElementById("work").value
+        investee_phone = document.getElementById("phone").value
+
+    firebase.database().ref("Investee/"+investee_phone).set({
+
+        
+
+    investee_name: document.getElementById("name").value,
+    investee_address: document.getElementById("address").value,
+    investee_amount: document.getElementById("amount").value,
+    investee_interest: document.getElementById("interest").value,
+    investee_work: document.getElementById("work").value,
+    investee_phone: document.getElementById("phone").value
+
+    });
+
+        alert("Investee added successfully")
+
+
+    }  
+</script>
+
+<%- include('./partials/footer.ejs') %>   
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+	        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+  <!-- Owl Carousel -->    
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js></script>
+
+  <!-- Js file -->
+  <script src="js/index.js"></script>
+
+  </body>
+</html>

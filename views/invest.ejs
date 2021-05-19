@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/invest.css">
+
+    <!-- title -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>Aasha | Palette of Hope</title>
+    
+</head>
+<body>
+    
+    <%- include('./partials/navbar.ejs') %>
+  
+  <!-- Invest section -->
+  <div class="jumbotron-fluid" id="investPage">
+    <div class="card">
+      <!-- <div class="card-img"><img src="/images/blogBanner.jpg" class="img-fluid img-responsive" alt=""></div> -->
+      <!-- <img src="images/piggy.png" class="d-block w-100 card-img img-fluid img-responsive" alt="..."> -->
+      <div class="container d-flex flex-column justify-content-end card-text card-img-overlay text-center">
+        <div class="text py-2 mb-5" style="text-align: center; background-color: var(--blue);">
+          <header class="section-header">
+            <h2 style="font-size: 50px;">Invest</h2>
+            <p>Discover and Invest</p>
+          </header>
+        </div>
+      </div>
+    </div>
+ </div>
+ <!-- Sectors -->
+ <div class="jumbotron-fluid py-5 sectors">
+    <div class="container">
+      <!-- <h1 class="text-center"></h1> -->
+      <div class="row gx-md-4 gy-4 pt-lg-2">
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="card px-2 py-3 text-center">
+              <div class="box">
+                <i class="fas fa-hand-holding-usd"></i>
+                <h2>Invest</h2>
+                <p>Invest in individuals by commiting funds to help them establish their businesses.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="card px-2 py-3 text-center">
+              <div class="box">
+                <i class="fas fa-hands-helping"></i>
+                <h2>Support</h2>
+                <p>Contribute to support the investee. Investee will recieve the amount, when the requested loan amount is successfully raised.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="card px-2 py-3 text-center">
+              <div class="box">
+                <i class="fas fa-percent"></i>
+                <h2>Interest</h2>
+                <p>Get repaid along with interest as soon as the investee's needs gets faciliated with the help of the amount you invested.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="card px-2 py-3 text-center">
+              <div class="box">
+                <i class="fas fa-sync-alt"></i>
+                <h2>Reinvest</h2>
+                <p>Reinvest the repayments to multiply your impact and augment your returns.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Investee list -->
+    <div class="container pt-4 pb-5" id="investee">
+        <h1 class="text-center pb-4">Browse our Investees</h1>
+        <div class="row gx-4 gy-3">
+            <div class="col-lg-4 col-sm-6">
+              <div class="card">
+                <div class="box">
+                  <div class="card-img-top">
+                    <img src="images/investee/1.jpg" alt="" class="card-img img-fluid img-responsive">
+                  </div>
+                  <div class="card-text">
+                    <h5>Angel Pamyawon Jajo</h5>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp; Ukhrul, Manipur</p>
+                    <p>Work Description</p>
+                    <p style="color: var(--green);">Amount to be collected</p>
+                    <p>Interest that can be paid</p>
+                    <form action="#" method="POST">
+                        ₹<input type="text" placeholder="Type amount">
+                        <input type="submit" name="investamt" id="investamt" value="Invest">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+              <div class="card">
+                <div class="box">
+                  <div class="card-img-top">
+                    <img src="images/investee/2.jpg" alt="" class="card-img img-fluid img-responsive">
+                  </div>
+                  <div class="card-text">
+                    <h5>Name</h5>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp; Address</p>
+                    <p>Work Description</p>
+                    <p style="color: var(--green);">Amount to be collected</p>
+                    <p>Interest that can be paid</p>
+                    <form action="#" method="POST">
+                        ₹<input type="text" placeholder="Type amount">
+                        <input type="submit" name="investamt" id="investamt" value="Invest">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+              <div class="card">
+                <div class="box">
+                  <div class="card-img-top">
+                    <img src="images/investee/3.jpg" alt="" class="card-img img-fluid img-responsive">
+                  </div>
+                  <div class="card-text">
+                    <h5>Name</h5>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp; Address</p>
+                    <p>Work Description</p>
+                    <p style="color: var(--green);">Amount to be collected</p>
+                    <p>Interest that can be paid</p>
+                    <form action="#" method="POST">
+                        ₹<input type="text" placeholder="Type amount">
+                        <input type="submit" name="investamt" id="investamt" value="Invest">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row gx-4 gy-3 pt-4">
+            <div class="col-lg-4 col-sm-6">
+              <div class="card">
+                <div class="box">
+                  <div class="card-img-top">
+                    <img src="images/investee/1.jpg" alt="" class="card-img img-fluid img-responsive">
+                  </div>
+                  <div class="card-text">
+                    <h5>Angel Pamyawon Jajo</h5>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp; Ukhrul, Manipur</p>
+                    <p>Work Description</p>
+                    <p style="color: var(--green);">Amount to be collected</p>
+                    <p>Interest that can be paid</p>
+                    <form action="#" method="POST">
+                        ₹<input type="text" placeholder="Type amount">
+                        <input type="submit" name="investamt" id="investamt" value="Invest">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+              <div class="card">
+                <div class="box">
+                  <div class="card-img-top">
+                    <img src="images/investee/2.jpg" alt="" class="card-img img-fluid img-responsive">
+                  </div>
+                  <div class="card-text">
+                    <h5>Name</h5>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp; Address</p>
+                    <p>Work Description</p>
+                    <p style="color: var(--green);">Amount to be collected</p>
+                    <p>Interest that can be paid</p>
+                    <form action="#" method="POST">
+                        ₹<input type="text" placeholder="Type amount">
+                        <input type="submit" name="investamt" id="investamt" value="Invest">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+              <div class="card">
+                <div class="box">
+                  <div class="card-img-top">
+                    <img src="images/investee/3.jpg" alt="" class="card-img img-fluid img-responsive">
+                  </div>
+                  <div class="card-text">
+                    <h5>Name</h5>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp; Address</p>
+                    <p>Work Description</p>
+                    <p style="color: var(--green);">Amount to be collected</p>
+                    <p>Interest that can be paid</p>
+                    <form action="#" method="POST">
+                        ₹<input type="text" placeholder="Type amount">
+                        <input type="submit" name="investamt" id="investamt" value="Invest">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+	        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+  <!-- Js file -->
+  <script src="js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/work.css">
+
+    <!-- title -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <title>Aasha | Palette of Hope</title>
+    
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+  
+  <!-- Work section -->
+  <div class="jumbotron-fluid" id="workPage">
+    <div class="card">
+      <!-- <div class="card-img"><img src="/images/blogBanner.jpg" class="img-fluid img-responsive" alt=""></div> -->
+      <!-- <img src="images/piggy.png" class="d-block w-100 card-img img-fluid img-responsive" alt="..."> -->
+      <div class="container d-flex flex-column justify-content-end card-text card-img-overlay text-center">
+        <div class="text py-2 mb-5" style="text-align: center; background-color: var(--blue);">
+          <header class="section-header">
+            <h2 style="font-size: 50px;">How it Works</h2>
+            <p>Simple steps for making social investment</p>
+          </header>
+        </div>
+      </div>
+    </div>
+ </div>
+ <div class="container py-5">
+     <p class="pb-4">AASHA is a platform for social investing. AASHA is India’s trusted peer-to-peer lending
+        platform that enables individuals to invest in entrepreneurs from low-income
+        households helping them build sustainable livelihoods. That's how we stand apart
+        from other lending platforms.</p>
+
+    <div class="row g-4">
+        <div class="col-lg-6 order-1 order-lg-2">
+            <video width="100%" autoplay loop>
+                <source src="videos/vid1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-2">
+                    <h1 class="number" style="border-radius: 50%; margin: 0!important; text-align: center; padding: 10px 20px; background-color: var(--green); color: var(--blue);">1</h1>
+                </div>
+                <div class="col-10">
+                    <h2>Choose an entrepreneur you want to invest in.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 pt-4">
+        <div class="col-lg-6 order-1 order-lg-1">
+            <video width="100%" autoplay loop>
+                <source src="videos/vid2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-lg-6 order-2 order-lg-2 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-2">
+                    <h1 class="number" style="border-radius: 50%; margin: 0!important; text-align: center; padding: 10px 20px; background-color: var(--green); color: var(--blue);">2</h1>
+                </div>
+                <div class="col-10">
+                    <h2>Invest an amount of your choice..</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 pt-4">
+        <div class="col-lg-6 order-1 order-lg-2">
+            <video width="100%" autoplay loop>
+                <source src="videos/vid3.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-2">
+                    <h1 class="number" style="border-radius: 50%; margin: 0!important; text-align: center; padding: 10px 20px; background-color: var(--green); color: var(--blue);">3</h1>
+                </div>
+                <div class="col-10">
+                    <h2>Get repaid and reinvest in other entrepreneurs.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <%- include('./partials/footer.ejs') %>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+	        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+  <!-- Js file -->
+  <script src="js/index.js"></script>
+
+</body>
+</html>
