@@ -4,10 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const fetch = require('node-fetch');
 const { METHODS } = require('http');
-<<<<<<< HEAD
-=======
-
->>>>>>> faad9bd565af8c6ed418e8f7738a7d07ff5961ba
 const app = express();
 
 app.use(bodyParser.urlencoded ({extended: true}));
@@ -16,11 +12,8 @@ const PORT = process.env.PORT || 3000;
 
 app.set('views', 'dist');
 app.set('view engine', 'ejs');
-app.listen(PORT, console.log('Server started on ${3000}'));
-<<<<<<< HEAD
-// app.listen(3000);
-=======
->>>>>>> faad9bd565af8c6ed418e8f7738a7d07ff5961ba
+// app.listen(PORT, console.log('Server started on ${3000}'));
+app.listen(3000);
 
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
@@ -74,7 +67,6 @@ app.get('/addInvestee', (req, res)=>{
     res.render('addInvestee', {active:"addInvestee"});
 });
 
-<<<<<<< HEAD
 app.get('/kyc', (req, res)=>{
     res.render('kyc', {active:"kyc"});
 });
@@ -95,8 +87,6 @@ app.get('/choice', (req, res)=>{
     res.render('choice', {active:"choice"});
 });
 
-=======
->>>>>>> faad9bd565af8c6ed418e8f7738a7d07ff5961ba
 app.post('/newsletter', (req, res) => {
     const { email } = req.body;
 
@@ -128,8 +118,4 @@ app.post('/newsletter', (req, res) => {
     res.redirect('/') :
     res.redirect('/newsletter'))
   .catch(err => console.log(err))
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> faad9bd565af8c6ed418e8f7738a7d07ff5961ba
