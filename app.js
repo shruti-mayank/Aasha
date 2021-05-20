@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.set('views', 'dist');
 app.set('view engine', 'ejs');
 // app.listen(PORT, console.log('Server started on ${3000}'));
-app.listen(3000);
+app.listen(PORT);
 
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
