@@ -116,7 +116,7 @@
                       <i class ="fas fa-user"></i>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDrop">
-                      <li><a class="dropdown-item" href="#">KYC</a></li>
+                      <li><a class="dropdown-item" href="/kyc">KYC</a></li>
                       <li><a class="dropdown-item" href="/">Logout</a></li>
                   </ul>
                 </li>
@@ -131,16 +131,18 @@
                 
             </ul>
             <script>
-            //   firebase.auth().onAuthStateChanged(function(user){
-            //     if(user){
-            //       document.getElementsByClassName("signed").style.display = "block";
-            //       document.getElementsByClassName("unsigned").style.display = "none";
-            //     }
-            //     else{
-            //       document.getElementsByClassName("signed").style.display = "none";
-            //       document.getElementsByClassName("unsigned").style.display = "block";
-            //     }
-            //   });
+              firebase.auth().onAuthStateChanged(function(user){
+                if(user){
+                  document.getElementsByClassName("signed").style.display = "block";
+                  document.getElementsByClassName("unsigned").style.display = "none";
+                // $(".signed")=show();
+                // $(".unsigned")=hide();
+                }
+                else{
+                  document.getElementsByClassName("signed").style.display = "none";
+                  document.getElementsByClassName("unsigned").style.display = "block";
+                }
+              });
             </script>
             <!-- <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

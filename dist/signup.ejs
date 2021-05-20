@@ -168,9 +168,7 @@
       user_pwd=  document.getElementById("password").value
       user_cpwd=  document.getElementById("confirmPassword").value
           if( user_pwd == user_cpwd)
-      {
-        
-        
+        {
           user_email = document.getElementById("email").value 
           user_pwd = document.getElementById("password").value
 
@@ -191,8 +189,8 @@
           });
           */
 
-          alert("user created successfully")
-          window.location.href ="userinfo.html";  
+          // alert("user created successfully")
+          window.location.href ="/userInfo";  
         }).catch(function(err){ 
           console.log(err)
           alert(err.message)

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/images/favicon.png" sizes="256x256">
+    <title>Aasha | KYC</title>
+
+    <style>
+        body{
+            background-color: lavenderblush;
+        }
+
+        .cont{
+            background-color: white;
+            height: 560px;
+            width: 900px;
+            padding: 25px;
+        }
+
+        .cont-2{
+            margin-top: 10px;
+        }
+
+        .butt{
+            margin-top: 190px;
+            border: none;
+            background-color: whitesmoke;
+            width: 80px;
+            height: 35px;
+            color: black;
+        }
+
+        .butt:hover{
+            background-color: #002927 ;
+            color: lavenderblush;
+        }
+
+        .pole{
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        .bo{
+            border: 1px solid #002927 ;       
+            }
+
+        .fost-9{
+            font-family: "Playfair Display";
+        }
+
+        .fost-10{
+            font-family: "Roboto";
+            font-weight: 800;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container mt-5 cont">
+        <h1 class="text-center fost-9">Upload Your PAN Card</h1>
+        <p class="text-center fost-10">Please ensure that the size of the document doesn’t exceed 5MB.
+            <br>(PDF, JPEG & PNG are the accepted formats)</p>
+        <div class="bo" >
+            <form action="" class="text-center pole fost-10">
+                <input type="file" id="myFile" name="filename">
+            </form>
+        </div>
+        <div class="button text-center mt-5">
+            <button class="butt fost-10" onclick="window.location.href='/choice'" >Next</button>
+        </div>
+        <div class="cont-2">
+            <p class="text-center mt-2 small fost-10"><i class="fas fa-lock"></i> Completely safe and secure</p>
+        </div>
+    </div>
+</body>
+</html>
