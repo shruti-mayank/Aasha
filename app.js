@@ -1,8 +1,19 @@
 const express = require('express');
+const request = require('request');
+const bodyParser = require('body-parser');
+const path = require('path');
+const fetch = require('node-fetch');
+const { METHODS } = require('http');
+
 const app = express();
+
+app.use(bodyParser.urlencoded ({extended: true}));
+
+const PORT = process.env.PORT || 3000;
+
 app.set('views', 'dist');
 app.set('view engine', 'ejs');
-app.listen(3000);
+app.listen(PORT, console.log('Server started on ${3000}'));
 
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
@@ -55,3 +66,36 @@ app.get('/forgotPass', (req, res)=>{
 app.get('/addInvestee', (req, res)=>{
     res.render('addInvestee', {active:"addInvestee"});
 });
+
+app.post('/newsletter', (req, res) => {
+    const { email } = req.body;
+
+    if (!email) {
+        res.redirect('/');
+        return;
+    }
+
+    const data = {
+        members: [
+            {
+                email_address: email,
+                status: 'subscribed',
+            }
+        ]
+    };
+
+    const postData = JSON.stringify(data);
+
+    fetch ('https://us6.api.mailchimp.com/3.0/lists/c5bfa0297b',{
+      method: 'POST',
+      headers: {
+          Authorization: 'auth c283db3b6e50e57247a8e0f951e9df24-us6'
+      },
+      body: postData
+     })
+
+.then(res.statusCode === 200 ?
+    res.redirect('/') :
+    res.redirect('/newsletter'))
+  .catch(err => console.log(err))
+})
