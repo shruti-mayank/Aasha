@@ -24,9 +24,9 @@
             background-color: lavenderblush;
         }
 
-        .cont{
+        .container{
             background-color: white;
-            height: 560px;
+            height: 430px;
             width: 900px;
             padding: 25px;
         }
@@ -35,8 +35,8 @@
             margin-top: 10px;
         }
 
-        .butt{
-            margin-top: 190px;
+        .btn{
+            margin-top: 50px;
             border: none;
             background-color: whitesmoke;
             width: 80px;
@@ -44,7 +44,7 @@
             color: black;
         }
 
-        .butt:hover{
+        .btn:hover{
             background-color: #002927 ;
             color: lavenderblush;
         }
@@ -54,9 +54,9 @@
             margin-bottom: 30px;
         }
 
-        .bo{
+        input{
             border: 1px solid #002927 ;       
-            }
+        }
 
         .fost-9{
             font-family: "Playfair Display";
@@ -70,21 +70,65 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5 cont">
+    <div class="container pt-5" style="margin-top: 130px;">
         <h1 class="text-center fost-9">Upload Your PAN Card</h1>
         <p class="text-center fost-10">Please ensure that the size of the document doesn’t exceed 5MB.
             <br>(PDF, JPEG & PNG are the accepted formats)</p>
         <div class="bo" >
-            <form action="" class="text-center pole fost-10">
-                <input type="file" id="myFile" name="filename">
+            <form enctype="multipart/form-data" action="" class="text-center pole fost-10">
+                <!-- <label>Choose File</label> -->
+                <input type="file" class="form-control" id="myFile" accept="images/*" name="filename">
+                <button class="btn fost-10" type="button" onclick="uploadPan()" >Next</button>
             </form>
-        </div>
-        <div class="button text-center mt-5">
-            <button class="butt fost-10" onclick="window.location.href='/choice'" >Next</button>
         </div>
         <div class="cont-2">
             <p class="text-center mt-2 small fost-10"><i class="fas fa-lock"></i> Completely safe and secure</p>
         </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script> 
+        const firebaseCon = {
+            apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+            authDomain: "aasha-439d3.firebaseapp.com",
+            databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+            projectId: "aasha-439d3",
+            storageBucket: "aasha-439d3.appspot.com",
+            messagingSenderId: "444861539687",
+            appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+            measurementId: "G-NHLQY6PMF4"
+        };
+
+        firebase.initializeApp(firebaseCon);
+    </script>
+
+    <script>
+        function uploadPan(){
+            upload();
+            setTimeout(redirect, 1000);
+        }
+        function redirect(){
+            window.location.href = '/choice';
+        }
+        function upload(){
+            var pan = document.getElementById("myFile").files[0];
+
+            var panName = pan.name;
+            var storageRef = firebase.storage().ref('pancard/'+panName);
+            var uploadTask = storageRef.put(pan);
+            
+            uploadTask.on('state_changed', function(snapshot){
+                var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+                console.log("upload is "+ progress + "done");
+            },function(err){
+                console.log(err.message);
+                window.alert("Please upload valid document");
+            });
+            // window.location = '/choice';
+        }
+    </script>
 </body>
 </html>
