@@ -43,8 +43,8 @@
     </div>
     <div class="container py-4 mb-3">  
       <a href="/newBlog"><button class="btn btn-block px-4 py-2 btn-success" style="font-size: 18px; font-family: var(--text);">Post New Blog</button></a>
-         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
+         <div class="row" id="blog_cards">
+            <!-- <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="post-box">
                 <div class="post-img"><img src="images/blog1.jpg" class="img-fluid img-responsive"></div>
                 <div class="p-3">
@@ -210,10 +210,60 @@
                   </p>
                </div>
              </div>
-           </div>   
+           </div>    -->
          </div>    
      </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script> 
+        const firebaseCon = {
+            apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+            authDomain: "aasha-439d3.firebaseapp.com",
+            databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+            projectId: "aasha-439d3",
+            storageBucket: "aasha-439d3.appspot.com",
+            messagingSenderId: "444861539687",
+            appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+            measurementId: "G-NHLQY6PMF4"
+        };
+
+        firebase.initializeApp(firebaseCon);
+    </script>
+
+    <script>
+
+      window.onload=function(){
+        getData();
+      }
+      function getData(){
+
+        firebase.database().ref('blogs/').once('value').then(function(snapshot){
+          var blog_card = document.getElementById('blog_cards');
+          blog_cards.innerHTML="";
+          var data =snapshot.val();
+          console.log(data);
+          for(let[key,value] of Object.entries(data)){
+            blog_card.innerHTML=`<div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="post-box">
+                <div class="post-img"><img src='`+value.imageURL+`'' class="img-fluid img-responsive"></div>
+                <div class="p-3">
+                  <p class="blog-meta">`+value.blog_name+`<span class="post-date">`+value.blog_date+`</span></p>
+                  <h3 class="post-title">`+value.blog_title+`</h3>
+                  <p class="blog-text">`+value.blog_brief+`</p>
+                  <p>
+                    <a href="" class="read-more-btn">Read More</a>
+                  </p>
+                </div>
+              </div>
+            </div>`+blog_card.innerHTML;
+          }
+        });
+      }
+    </script>
 
     <%- include('./partials/footer.ejs') %>
 
