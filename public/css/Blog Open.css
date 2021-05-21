@@ -1,0 +1,64 @@
+.uppe{
+    font-size: 60px;
+}
+
+.container-2{
+    margin: 50px 50px 15px 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.spa{
+    margin: 50px 50px 15px 50px;
+}
+
+h3{
+    padding: 20px;
+}
+
+.para{
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container-3{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    padding: 9px;
+}
+
+.desig{
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: grey;
+}
+
+.botto{
+    font-size: 80px;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    padding: 9px;
+}
+
+h1{
+    font-family: 'Playfair Display';
+}
+
+p,h5{
+    font-family: 'Roboto';
+    font-weight: 600;
+}
+
+span{
+    font-family: 'Playfair Display';
+}
