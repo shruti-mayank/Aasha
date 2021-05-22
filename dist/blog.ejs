@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="container py-4 mb-3">  
-      <a href="/newBlog"><button class="btn btn-block px-4 py-2 btn-success" style="font-size: 18px; font-family: var(--text);">Post New Blog</button></a>
+      <a href="/newBlog"><button class="btn btn-block px-4 py-2 btn-success" id="postblog" style="font-size: 18px; font-family: var(--text);">Post New Blog</button></a>
          <div class="row" id="blog_cards">
             <!-- <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="post-box">
@@ -263,7 +263,33 @@
           }
         });
       }
+      
+    
+    
     </script>
+
+
+
+
+
+<script>
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log(user)
+    $("#postblog").show();
+   
+  //  window.location.href="userinfo"
+      // User is signed in.
+    } else {
+      $("#postblog").hide();
+    
+      // No user is signed in.
+    }
+  });
+
+</script>
+
+
 
     <%- include('./partials/footer.ejs') %>
 

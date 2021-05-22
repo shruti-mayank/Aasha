@@ -108,7 +108,7 @@
     <script>
         function uploadPan(){
             upload();
-            setTimeout(redirect, 1000);
+            setTimeout(redirect, 2000);
         }
         function redirect(){
             window.location.href = '/choice';
@@ -117,6 +117,7 @@
             var pan = document.getElementById("myFile").files[0];
 
             var panName = pan.name;
+        //    var res = panName.replace(/[.]/g,"-");
             var storageRef = firebase.storage().ref('pancard/'+panName);
             var uploadTask = storageRef.put(pan);
             
