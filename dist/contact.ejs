@@ -59,24 +59,67 @@
           <a><i class="fa fa-phone"></i>&nbsp;&nbsp; +91 9999999999</a>
           <a href="mailto::aashapaletteofhope@gmail.com" style="color: #111;"><i class="fa fa-envelope mt-3">&nbsp;&nbsp; aasha@gmail.com</i></a>
       </div>
-      <div class="form">
+      <form id="contact_form" class="form">
         <h3 class="text-center text-light pb-2">Send us your Queries</h3>
         <!-- <label style="font-size: 20px; color: #fff;">Name</label> -->
         <input type="text" placeholder="Enter your Name" id="name" required><br>
         <!-- <label style="font-size: 20px; color: #fff;">Email</label> -->
         <input type="text" placeholder="Enter your E-mail" id="email" required><br>
         <!-- <label style="font-size: 20px; color: #fff;">Mobile No.</label> -->
-        <input type="text" placeholder="Enter your Mobile No." id="mobile" required><br>
+        <input type="text" placeholder="Enter your Mobile No." id="phone" required><br>
         <!-- <label for="message" style="font-size: 20px; color: #fff;">Message</label> -->
         <textarea id="message" name="message" placeholder="Write your message..." style="height:100px"></textarea>
-        <input type="submit" value="Submit">
-      </div>
+        <button type="button" class="btn btn-block" onclick="contact()">Submit</button>
+      </form>
     </div>
   </div>
   <div class="jumbotron-fluid">    
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7005.825616343096!2d77.36296862525406!3d28.60239242971876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce57029dfe9c1%3A0x24c49100744d251!2sSector%2060%2C%20Noida%2C%20Uttar%20Pradesh%20201301%2C%20India!5e0!3m2!1sen!2snp!4v1621290501209!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script> 
+        const firebaseCon = {
+            apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+            authDomain: "aasha-439d3.firebaseapp.com",
+            databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+            projectId: "aasha-439d3",
+            storageBucket: "aasha-439d3.appspot.com",
+            messagingSenderId: "444861539687",
+            appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+            measurementId: "G-NHLQY6PMF4"
+        };
+
+        firebase.initializeApp(firebaseCon);
+    </script>
+
+    <script>
+        function contact(){
+          var name = document.getElementById('name').value;
+          var email = document.getElementById('email').value;
+          var phone = document.getElementById('phone').value;
+          var message = document.getElementById('message').value; 
+
+          firebase.database().ref('contact/').push().set({
+              contact_name: name,
+              contact_email: email,
+              contact_phone: phone,
+              contact_message: message
+          },function(error){
+              if(error){
+                  alert("Trouble Fetching Query. Please Try again!!");
+              }
+              else{
+                  alert("Query Sent successfully");
+                  document.getElementById('contact_form').reset();
+              }
+          });
+        } 
+    </script>
 
 <%- include('./partials/footer.ejs') %>
 

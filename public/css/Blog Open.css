@@ -1,5 +1,5 @@
 .uppe{
-    font-size: 60px;
+    font-size: 70px;
 }
 
 .container-2{
@@ -31,7 +31,7 @@ h3{
 .desc{
     display: flex;
     flex-direction: column;
-    padding: 9px;
+    padding-left: 25px;
 }
 
 .desig{

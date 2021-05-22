@@ -99,8 +99,8 @@
     <!-- Investee list -->
     <div class="container pt-4 pb-5" id="investee">
         <h1 class="text-center pb-4">Browse our Investees</h1>
-        <div class="row gx-4 gy-3">
-            <div class="col-lg-4 col-sm-6" id="userCard">
+        <div class="row gx-4 gy-3" id="investee_cards">
+            <!-- <div class="col-lg-4 col-sm-6" id="userCard">
               <div class="card">
                 <div class="box">
                   <div class="card-img-top">
@@ -112,11 +112,11 @@
                     <p id="Work"></p>
                     <p id="Amount" style="color: var(--green);"></p>
                     <p id="Interest"></p>
-                    <!-- <form action="#" method="POST"> -->
-                        <!-- ₹<input type="text" placeholder="Type amount">
-                        <input type="submit" name="invest" id="invest" value="Invest"> -->
+                    <form action="#" method="POST">
+                        ₹<input type="text" placeholder="Type amount">
+                        <input type="submit" name="invest" id="invest" value="Invest">
                         <form class="d-flex justify-content-center pt-2 bg-light"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HCenMoyzUpIVJA" async> </script></form>
-                    <!-- </form> -->
+                    </form>
                   </div>
                 </div>
               </div>
@@ -133,10 +133,10 @@
                     <p>Work Description</p>
                     <p style="color: var(--green);">Amount to be collected</p>
                     <p>Interest that can be paid</p>
-                    <!-- <form action="#" method="POST">
+                    <form action="#" method="POST">
                         ₹<input type="text" placeholder="Type amount">
                         <input type="submit" name="investamt" id="investamt" value="Invest">
-                    </form> -->
+                    </form>
                     <form class="d-flex justify-content-center pt-2 bg-light"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HCenMoyzUpIVJA" async> </script></form>
                   </div>
                 </div>
@@ -154,15 +154,15 @@
                     <p>Work Description</p>
                     <p style="color: var(--green);">Amount to be collected</p>
                     <p>Interest that can be paid</p>
-                    <!-- <form action="#" method="POST">
+                    <form action="#" method="POST">
                         ₹<input type="text" placeholder="Type amount">
                         <input type="submit" name="investamt" id="investamt" value="Invest">
-                    </form> -->
+                    </form>
                     <form class="d-flex justify-content-center pt-2 bg-light"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HCenMoyzUpIVJA" async> </script></form>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
         </div>
         <!-- <div class="row gx-4 gy-3 pt-4">
             <div class="col-lg-4 col-sm-6">
@@ -231,8 +231,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script> 
-      const firebaseConfigInvestee = {
+      const firebaseCon = {
           apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
           authDomain: "aasha-439d3.firebaseapp.com",
           databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
@@ -243,53 +245,80 @@
           measurementId: "G-NHLQY6PMF4"
       };
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfigInvestee);
+      firebase.initializeApp(firebaseCon);
 
-      // function SelectAllData(){
-      //   firebase.database().ref('Investee').once('value').forEach(
-      //       function(CurrentValue){
-      //         var investee_name = CurrentValue.val().investee_name;
-      //         var investee_address = CurrentValue.val().investee_address;
-      //         var investee_work = CurrentValue.val().investee_work;
-      //         var investee_interest = CurrentValue.val().investee_interest;
-      //         // var phone = CurrentValue.val().investee_phone;
-      //         var investee_amount = CurrentValue.val().investee_amount;
-             
-      //         document.getElementById("Name").innerHTML = investee_name;
-      //         document.getElementById("Address").innerHTML = investee_address;
-      //         document.getElementById("Work").innerHTML = investee_work;
-      //         document.getElementById("Interest").innerHTML = investee_interest;
-      //         document.getElementById("Amount").innerHTML = investee_amount;
-      //       });
-      //     }
+      window.onload=function(){
+        getData();
+      }
+      function getData(){
 
-      firebase.database().ref('Investee').once('value',
-      function(snapshot){
-        snapshot.forEach(function(childSnapshot){
-          // var childKey = childSnapshot.key;
-          var childData = childSnapshot.val();
-          console.log(childData);
-          document.getElementById("Name").innerHTML = childData.investee_name;
-          document.getElementById("Address").innerHTML = childData.investee_address;
-          document.getElementById("Work").innerHTML = childData.investee_work;
-          document.getElementById("Amount").innerHTML = childData.investee_amount;
-          document.getElementById("Interest").innerHTML = childData.investee_interest;
-        });
-      });
+        firebase.database().ref('investee/').once('value').then(function(snapshot){
+          var investee_card = document.getElementById('investee_cards');
+          investee_cards.innerHTML="";
+          var data =snapshot.val();
+          console.log(data);
+          for(let[key,value] of Object.entries(data)){
+            investee_card.innerHTML=`<div class="col-lg-4 col-sm-6" id="userCard">
+              <div class="card">
+                <div class="box">
+                  <div class="card-img-top">
+                    <img src='`+value.imageURL+`' alt="investee's image" class="card-img img-fluid img-responsive">
+                  </div>
+                  <div class="card-text">
+                    <h3 class="text-center">`+value.investee_name+`</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>&nbsp; `+value.investee_address+`</p>
+                    <p>`+value.investee_work+`</p>
+                    <p style="color: var(--green);"><strong>Required Amount:&nbsp; </strong>₹`+value.investee_amount+`</p>
+                    <p><strong>Interest rate:&nbsp; </strong>`+value.investee_interest+`%</p>
+                    <form action="#" method="POST">
+                        ₹<input type="text" id="invest_amt" placeholder="Type amount">
+                        <button type="button" onclick="paymentProcess()">Invest</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>`+investee_card.innerHTML;
+          }
+         });
+      }      
 
-      // var ref = firebase.database().ref("Investee");
-      // ref.on("value", function(snapshot){
-      //   snapshot.forEach(function(childSnapshot){
-      //     var data = childSnapshot.val();
-      //     console.log(data);
-      //     document.getElementById("Name").innerHTML = data.investee_name;
-      //     document.getElementById("Address").innerHTML = data.investee_address;
-      //     document.getElementById("Work").innerHTML = data.investee_work;
-      //     document.getElementById("Amount").innerHTML = data.investee_amount;
-      //     document.getElementById("Interest").innerHTML = data.investee_interest;
-      //   });
-      // });
-      // window.onload = SelectAllData();
+      // razorpay
+      function paymentProcess(){
+        var amt = document.getElementById("invest_amt").value;
+        amt = amt*100;
+        var options = {
+          "key": "rzp_test_rOsf45u1LVPnmE", 
+          "amount": parseInt(amt), 
+          "currency": "INR",
+          "name": "Aasha",
+          "description": "Investment amount",
+          "image": "/images/logo3.png",
+          // "order_id": "order_9A33XWu170gUtm", 
+          "handler": function (response){
+              // alert(response.razorpay_payment_id);
+              // alert(response.razorpay_order_id);
+              // alert(response.razorpay_signature)
+              savetoDB(response);
+          },
+          // "prefill": {
+          //     "name": "Aasha",
+          //     "email": "aashapaleteofhope@gmail.com",
+          //     "contact": "9999999999"
+          // },
+          // "notes": {
+          //     "address": "Razorpay Corporate Office"
+          // },
+          "theme": {
+              "color": "#0e6621"
+          }
+        };
+        var propay = new Razorpay(options);
+        propay.open();
+      }
+
+      function savetoDB(response){
+        console.log(response);
+      }
     
     </script>
 

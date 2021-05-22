@@ -49,7 +49,7 @@ a{
     margin-bottom: 16px;
     resize: vertical;
 }
-#contactPage input[type=submit] {
+#contactPage .btn {
     background-color: #fff;
     color: #0e6621;
     padding: 8px 40px;
@@ -58,7 +58,7 @@ a{
     cursor: pointer;
   }
   
-#contactPage  input[type=submit]:hover {
+#contactPage  .btn:hover {
     background-color:#0e6621 ;
     color: white;
     border: 1px solid white;

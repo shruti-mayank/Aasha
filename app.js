@@ -47,6 +47,10 @@ app.get('/newBlog', (req, res)=>{
     res.render('newBlog', {active:"newBlog"});
 });
 
+app.get('/blogPage', (req, res)=>{
+    res.render('blogPage', {active:"blogPage"});
+});
+
 app.get('/contact', (req, res)=>{
     res.render('contact', {active:"contact"});
 });

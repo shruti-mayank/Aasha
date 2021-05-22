@@ -39,6 +39,11 @@
             background-color: var(--green);
             color: #fff;
         }
+        .btn:hover{
+            color: var(--green);
+            background-color: #fff;
+            border: 2px solid var(--green);
+        }
     </style>
 
   </head>
@@ -60,11 +65,14 @@
     </div>
 
     <!-- Form -->
-    <div class="container p-5">
+    <div class="container">
+        <form id="investee-form" class="p-5">
             <div class="row">
                 <div class="col-md-6">
                     <label>Name Of Investee</label>
                     <input type="text" placeholder="Enter Investee's Name" class="form-control" id="name" required><br>
+                    <label>Image of Investee</label>
+                    <input type="file" class="form-control" id="image" accept="image/*" required><br>
                     <label>Phone Number</label>
                     <input type="text" placeholder="Enter Investee's Phone number" class="form-control" id="phone" required><br>
                 </div>
@@ -73,68 +81,98 @@
                     <input type="text" placeholder="Enter required amount" class="form-control" id="amount" required><br>
                     <label>Interest to be paid</label>
                     <input type="text" placeholder="Enter interest that can be paid by investee" class="form-control" id="interest" required><br>
+                    <label>Address Of Investee</label>
+                    <input type="text" placeholder="Enter Investee's Address" class="form-control" id="address" required><br>
                 </div> 
-            </div>
-            <label>Address Of Investee</label>
-                <input type="text" placeholder="Enter Investee's Address" class="form-control" id="address" required><br>
+            </div>               
             <label>Work Description</label>
-            <textarea name="work" id="work" class="form-control" style="width: 100%;"></textarea><br>
+            <textarea name="work" id="work" rows="5" class="form-control" style="width: 100%;"></textarea><br>
             <!--     <input type="submit" name="register" value="Register" id="register" class="p-2 px-4" style="background-color: #255B8A; color: #fff; border: 0px!important;"> --> 
-            <button class="btn btn-large px-4 py-1" type="submit" id="submitBtn" onclick="investee()">Post</button>
-   
+            <button class="btn btn-large px-4 py-1" type="button" onclick="investee()">Post</button>
+        </form>   
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-          <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
-          <script> 
-          const firebaseCon = {
-    apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
-    authDomain: "aasha-439d3.firebaseapp.com",
-    databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
-    projectId: "aasha-439d3",
-    storageBucket: "aasha-439d3.appspot.com",
-    messagingSenderId: "444861539687",
-    appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
-    measurementId: "G-NHLQY6PMF4"
-};
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script> 
+        const firebaseCon = {
+            apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+            authDomain: "aasha-439d3.firebaseapp.com",
+            databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+            projectId: "aasha-439d3",
+            storageBucket: "aasha-439d3.appspot.com",
+            messagingSenderId: "444861539687",
+            appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+            measurementId: "G-NHLQY6PMF4"
+        };
 
-firebase.initializeApp(firebaseCon);
-</script>
+        firebase.initializeApp(firebaseCon);
+    </script>
 
-<script>
+    <script>
+        function investee(){
+            var image = document.getElementById('image').files[0];
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var amount = document.getElementById('amount').value;
+            var interest = document.getElementById('interest').value;
+            var work = document.getElementById('work').value;
+            var address = document.getElementById('address').value;
 
+            var imageName = image.name;
+            // var dateStr = Date().getTime();
+            var storageRef=firebase.storage().ref('investeeImage/'+imageName);
+            var uploadTask = storageRef.put(image);
+            uploadTask.on('state_changed', function(snapshot){
+                var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+                console.log("upload is "+progress+" done");
+            },function(error){
+                console.log(error.message);
+            },function(){
+                uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL){
+                    firebase.database().ref('investee/').push().set({
+                        investee_name: name,
+                        investee_phone: phone,
+                        investee_amount: amount,
+                        investee_interest: interest,
+                        investee_work: work,
+                        investee_address: address,
+                        imageURL: downloadURL
+                    },function(error){
+                        if(error){
+                            alert("Error while uploading investee");
+                        }
+                        else{
+                            alert("Investee added successfully");
+                            document.getElementById('investee-form').reset();
+                        }
+                    });
+                });
+            });
+        }
 
-// Initialize Firebase
+        // function investee()
+        // {
+        //     investee_name= document.getElementById("name").value
+        //     investee_address= document.getElementById("address").value
+        //     investee_amount= document.getElementById("amount").value
+        //     investee_interest= document.getElementById("interest").value
+        //     investee_work= document.getElementById("work").value
+        //     investee_phone = document.getElementById("phone").value
 
-
-          function investee()
-    {
-        investee_name= document.getElementById("name").value
-        investee_address= document.getElementById("address").value
-        investee_amount= document.getElementById("amount").value
-        investee_interest= document.getElementById("interest").value
-        investee_work= document.getElementById("work").value
-        investee_phone = document.getElementById("phone").value
-
-    firebase.database().ref("Investee/"+investee_phone).set({
-
-        
-
-    investee_name: document.getElementById("name").value,
-    investee_address: document.getElementById("address").value,
-    investee_amount: document.getElementById("amount").value,
-    investee_interest: document.getElementById("interest").value,
-    investee_work: document.getElementById("work").value,
-    investee_phone: document.getElementById("phone").value
-
-    });
-
-        alert("Investee added successfully")
-
-
-    }  
-</script>
+        //     firebase.database().ref("Investee/"+investee_phone).set({
+        //         investee_name: document.getElementById("name").value,
+        //         investee_address: document.getElementById("address").value,
+        //         investee_amount: document.getElementById("amount").value,
+        //         investee_interest: document.getElementById("interest").value,
+        //         investee_work: document.getElementById("work").value,
+        //         investee_phone: document.getElementById("phone").value
+        //     });
+        //     alert("Investee added successfully")
+        // }  
+    </script>
 
 <%- include('./partials/footer.ejs') %>   
 

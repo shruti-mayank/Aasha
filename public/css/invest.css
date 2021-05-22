@@ -91,7 +91,7 @@ a{
     outline: 0!important;
 }
   
-#investee form input[type="submit"] {
+#investee form button {
     position: absolute;
     top: 0;
     right: -2px;
@@ -106,7 +106,7 @@ a{
     border-radius: 0 4px 4px 0;
   }
   
-#investee form input[type="submit"]:hover {
+#investee form button:hover {
     background: var(--blue);
     border: 2px solid var(--green);
     border-radius: 5px;

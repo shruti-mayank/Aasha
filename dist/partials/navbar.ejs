@@ -41,7 +41,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="https://external.sprinklr.com/insights/explorer/dashboard/601b9e214c7a6b689d76f493/tab/0?id=DASHBOARD_601b9e214c7a6b689d76f493&home=1" target="_blank">Resources</a></li>
-                    <li><a class="dropdown-item" href="https://rzp.io/l/3NM5CSFnjR">Donation</a></li>
+                    <li><a class="dropdown-item" href="https://rzp.io/l/3NM5CSFnjR" target="_blank">Donation</a></li>
                 </ul>
                 </li>         
                 <!-- <li class="nav nav-link-item">
@@ -66,50 +66,8 @@
                 };
                 // Initialize Firebase
                 firebase.initializeApp(firebaseConfig);
+                </script>
 
-                // firebase.auth().onAuthStateChanged(function(user){
-                //   if(!user)
-                //   {
-                //     `<li class="nav-item" nav-link>
-                //       <a href="login.html">Login</a>
-                //     </li> 
-                //     <li class="nav-item"> nav-link
-                //       <a href="signup.html">Signup</a>
-                //     </li>`
-                //   }
-                //   else{
-                //     `<li class="nav-item dropdown">
-                //       <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                //         <i class ="fas fa-user"></i>
-                //       </a>
-                //       <ul class="dropdown-menu" aria-labelledby="navbarDrop">
-                //         <li><a class="dropdown-item" href="#">KYC</a></li>
-                //         <li><a class="dropdown-item" href="#">Logout</a></li>
-                //       </ul>
-                //     </li>`
-                //   }
-                // });
-                //   auth.onAuthStateChanged(user => {
-                //     if (user) {
-                //       <li class="nav-item dropdown">
-                //         <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                //           <i class ="fas fa-user"></i>
-                //         </a>
-                //         <ul class="dropdown-menu" aria-labelledby="navbarDrop">
-                //           <li><a class="dropdown-item" href="#">KYC</a></li>
-                //           <li><a class="dropdown-item" href="#">Logout</a></li>
-                //         </ul>
-                //       </li>
-                //     } else {
-                //       `<li class="nav-item" nav-link>
-                //         <a href="login.html">Login</a>
-                //       </li> 
-                //       <li class="nav-item"> nav-link
-                //         <a href="signup.html">Signup</a>
-                //       </li>`
-                //     }
-                //   });
-                // </script>
                 <!-- {{#if isAuthenticated}} -->
                 <li class="nav-item dropdown signed">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -130,24 +88,6 @@
                 <!-- {{/if}}  -->
                 
             </ul>
-            <!-- <script>
-              firebase.auth().onAuthStateChanged(function(user){
-                if(user){
-                  document.getElementsByClassName("signed").style.display = "block";
-                  document.getElementsByClassName("unsigned").style.display = "none";
-                // $(".signed")=show();
-                // $(".unsigned")=hide();
-                }
-                else{
-                  document.getElementsByClassName("signed").style.display = "none";
-                  document.getElementsByClassName("unsigned").style.display = "block";
-                }
-              });
-            </script> -->
-            <!-- <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
             </div>
         </div>
     </nav>

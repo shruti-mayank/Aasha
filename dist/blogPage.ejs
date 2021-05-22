@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Blog Open.css">
+
+    <!-- title -->
+    <link rel="icon" href="images/favicon.png" sizes="256x256">
+    <title>Aasha | Palette of Hope</title>
+
+    <style>
+        #topbar{
+            background-color: #0c3d16;
+        }
+        .navbar{
+            background-color: var(--green);
+        }
+    </style>
+    
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+      <div class="container bg-light col-lg-8" style="margin-top: 100px;" id="blog_description">
+        <!-- <h1 class="text-center mt-5 py-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, hic!</h1>
+        
+        <div class="image text-center">
+            <img src="images/blog5.jpg" alt="" style="width: 700px;">
+        </div>
+        <div class="tex spa">
+            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, totam quibusdam odio cum quia natus odit quaerat ducimus necessitatibus mollitia a dolorem quos omnis asperiores molestiae tempore, aperiam doloremque consectetur reprehenderit nobis amet aliquam, facilis perferendis! At sapiente quos quod vel eum, dolor molestiae eaque ipsa nesciunt pariatur praesentium omnis accusantium maxime tempora doloribus consequatur.</p>
+
+            <hr>
+            <div class="container-3 ">
+                <i class="fas fa-user-circle botto"></i>
+                <div class="desc">
+                    <span class="sp text-start">WRITTEN BY</span>
+                    <h5>Sanjana Nair</h5>
+                    <p class="desig">date</p>
+                </div>
+            </div>
+        </div> -->
+      </div>
+
+      <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script> 
+        const firebaseCon = {
+            apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+            authDomain: "aasha-439d3.firebaseapp.com",
+            databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+            projectId: "aasha-439d3",
+            storageBucket: "aasha-439d3.appspot.com",
+            messagingSenderId: "444861539687",
+            appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+            measurementId: "G-NHLQY6PMF4"
+        };
+
+        firebase.initializeApp(firebaseCon);
+    </script>
+
+    <script>
+
+      window.onload=function(){
+        getData();
+      }
+      function getData(){
+
+        firebase.database().ref('blogs/').once('value').then(function(snapshot){
+          var blog_page = document.getElementById('blog_description');
+          blog_description.innerHTML="";
+          var data =snapshot.val();
+          console.log(data);
+          for(let[key,value] of Object.entries(data)){
+            blog_page.innerHTML=`<h1 class="text-center mt-5 py-4">`+value.blog_title+`</h1>
+        
+        <div class="image text-center">
+            <img src='`+value.imageURL+`' alt="" style="width: 700px;">
+        </div>
+        <div class="tex spa">
+            <p class="para">`+value.blog_desc+`</p>
+
+            <hr>
+            <div class="container-3 ">
+                <i class="fas fa-user-circle botto"></i>
+                <div class="desc">
+                    <span class="sp text-start">WRITTEN BY</span>
+                    <h5>`+value.blog_name+`</h5>
+                    <p class="desig">`+value.blog_date+`</p>
+                </div>
+            </div>
+        </div>`+blog_page.innerHTML;
+          }
+        });
+      }
+    </script>
+
+      <%- include('./partials/footer.ejs') %>
+
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+      <!-- Jquery -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+              integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  
+    <!-- Js file -->
+    <script src="js/index.js"></script>
+  
+  </body>
+  </html>

@@ -254,13 +254,22 @@
                   <p class="blog-meta">`+value.blog_name+`<span class="post-date">`+value.blog_date+`</span></p>
                   <h3 class="post-title">`+value.blog_title+`</h3>
                   <p class="blog-text">`+value.blog_brief+`</p>
-                  <p>
-                    <a href="" class="read-more-btn">Read More</a>
-                  </p>
+                  <button class="btn btn-success py-1 px-3" id='`+key+`' onclick='redirect_page(this.id)'>Read More</button>
                 </div>
               </div>
             </div>`+blog_card.innerHTML;
           }
+        });
+      }
+      function redirect_page(key){
+        // firebase.database().ref('blogs/').then((snapshot)=>{
+        //   window.location.replace("/blogPage?id="+key);
+        // }).catch((error)=>{
+        //   console.log("Not found");
+        // });
+        // window.location.replace('/blogpage?id=' + key);
+        firebase.database().ref('blogs/'+key).once('value').then(function(snapshot){
+          window.location.replace('/blogPage');
         });
       }
     </script>
