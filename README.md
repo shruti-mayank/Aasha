@@ -1,4 +1,4 @@
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/logo3.png)
+AASHA - Palette of hope
 
 Aasha mainly focuses on supporting and finding investors for people who want to start small scale businesses but do not have enough capital to set it up.
 The Investee can apply to get listed and then investors could see the profiles of the investees and decide where to invest.
