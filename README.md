@@ -1,4 +1,4 @@
-AASHA - Palette of hope
+<strong>AASHA - Palette of hope</strong>
 
 Aasha mainly focuses on supporting and finding investors for people who want to start small scale businesses but do not have enough capital to set it up.
 The Investee can apply to get listed and then investors could see the profiles of the investees and decide where to invest.
@@ -9,9 +9,9 @@ Aasha mainly focuses on supporting and finding investors for people who want to 
 The Investee can apply to get listed and then investors could see the profiles of the investees and decide where to invest.
 In these hard times, we are setting up a covid donation and resources plan to help people in need.
 
-[Link to our website](https://aasha-node.herokuapp.com/ "Aasha's Homepage")
+Hosted Website link: [Aasha-Palette of Hope](https://aasha-node.herokuapp.com/ "Aasha's Homepage")
 
-[Link to our ppt](https://www.canva.com/design/DAEfLj9yIOI/zFC1xRYSt54Ixumzq8FQJQ/view?utm_content=DAEfLj9yIOI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink "Aasha's PPT")
+[Our ppt](https://www.canva.com/design/DAEfLj9yIOI/zFC1xRYSt54Ixumzq8FQJQ/view?utm_content=DAEfLj9yIOI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink "Aasha's PPT")
 
 
                                                
