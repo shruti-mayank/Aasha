@@ -51,6 +51,7 @@ a{
 }
 #blogPage .container .row .post-box img{
     width: 100%;
+    height: 300px;
 }
 #blogPage .container .row .post-box .blog-meta{
     font-size: 14px;
