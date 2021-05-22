@@ -21,10 +21,12 @@ In these hard times, we are setting up a covid donation and resources plan to he
 </ul>
 
 ## Website Demo
-[Aasha-Palette of Hope](https://aasha-node.herokuapp.com/ "Aasha's Homepage")
+### [Aasha-Palette of Hope](https://aasha-node.herokuapp.com/ "Aasha's Homepage")
+<br>
 
 ## Presentation
-[Link](https://www.canva.com/design/DAEfLj9yIOI/zFC1xRYSt54Ixumzq8FQJQ/view?utm_content=DAEfLj9yIOI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink "Aasha's PPT")
+### [Link](https://www.canva.com/design/DAEfLj9yIOI/zFC1xRYSt54Ixumzq8FQJQ/view?utm_content=DAEfLj9yIOI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink "Aasha's PPT")
+<br>
 
 ## Contributors
 ### Team Name: Nostros Codinger
