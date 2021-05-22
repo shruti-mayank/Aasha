@@ -1,4 +1,4 @@
-<h1>AASHA - Palette of hope</h1>
+<img src="public/images/logo3.png">
 
 ## Introduction
 Aasha mainly focuses on supporting and finding investors for people who want to start small scale businesses but do not have enough capital to set it up.
