@@ -84,16 +84,98 @@
           </div>
           <div class="inpu-box-2 inpu">
             <form action="" class="text-center mb-4 mt-4 fost-4">Driving License:
-                <input type="file" id="myFile" name="filename">
+                <input type="file" id="myFile1" name="filename">
             </form>
           </div>
             <div class="nun">
-              <button class="nun-1 fost-4" onclick="">Upload</button>
+              <button class="nun-1 fost-4" onclick="saveinfo()">Upload</button>
             </div>
             <div class="cont-2">
               <p class="text-center mt-2 small fost-4"><i class="fas fa-lock"></i> Completely safe and secure</p>
             </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script> 
+        const firebaseCon = {
+            apiKey: "AIzaSyAbfwV3VSsqdSZz7KV3ZdL2U1RNWc4BSgg",
+            authDomain: "aasha-439d3.firebaseapp.com",
+            databaseURL: "https://aasha-439d3-default-rtdb.firebaseio.com",
+            projectId: "aasha-439d3",
+            storageBucket: "aasha-439d3.appspot.com",
+            messagingSenderId: "444861539687",
+            appId: "1:444861539687:web:2dc188d1d7ee968f483bc2",
+            measurementId: "G-NHLQY6PMF4"
+        };
+
+        firebase.initializeApp(firebaseCon);
+      
+    </script>
+
+    <script>
+      //  function saveinfo(){
+          //  upload();
+           // setTimeout(redirect, 2000);
+     //   }
+      //  function redirect(){
+       //     window.location.href = '/choice';
+      //  }
+
+      var user = firebase.auth().currentUser;
+      console.log(user)
+/*
+if (user != null) {
+  user.providerData.forEach(function (profile) {
+    console.log("Sign-in provider: " + profile.providerId);
+    console.log("  Provider-specific UID: " + profile.uid);
+    console.log("  Name: " + profile.displayName);
+    console.log("  Email: " + profile.email);
+    console.log("  Photo URL: " + profile.photoURL);
+  });
+}
+*/
+
+
+
+   
+
+  function saveinfo()
+  { 
+
+var databaseRef= firebase.database().ref().child("img");
+        
+databaseRef.once("value").then(function(snapshot)
+{
+  var pan = document.getElementById("myFile").files[0];
+            var Name = pan.name;
+            console.log(Name)
+//var name= myFile["filename"];
+var datestr=new Date().getTime();
+var filecompletename = Name+"_"+datestr;
+
+var storageref= firebase.storage().ref("KYC image");
+var blogstorageref = storageref.child(filecompletename);
+
+var uploadtask=blogstorageref.put(pan);
+
+//uploadTask.on
+//(
+//"state_changed",
+
+//);
+
+
+});
+
+
+  }
+        
+    </script>
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

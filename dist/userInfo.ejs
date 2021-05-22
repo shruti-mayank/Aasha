@@ -129,7 +129,9 @@
             <label>Name</label>
             <input type="text" placeholder="Enter your Name" class="form-control" id="name" required><br>
             <label>Email</label>
-            <input type="text" placeholder="Enter your Email" class="form-control" id="email" required><br>
+            <input type="text" placeholder="Enter your Email" class="form-control" id="email" required>
+            
+            <input type="hidden" placeholder="Enter your Email" class="form-control" id="kyc" required><br>
             <label for="gender">Gender</label>
             <select class="form-control" id="gender" name="gender" required>
               <option value="Male">Male</option>
@@ -161,7 +163,7 @@
 
             save();
 
-            setTimeout(redirect,1000);
+            setTimeout(redirect,2000);
           }
           function redirect() {
               window.location.href = "/"
@@ -176,6 +178,7 @@
               firebase.database().ref("Users/" + res).set({
                 user_name: document.getElementById("name").value,
                 user_email: document.getElementById("email").value,
+                user_kyc: document.getElementById("kyc").value,
                 user_gender: document.getElementById("gender").value,
                 user_phone: document.getElementById("phone").value
               });

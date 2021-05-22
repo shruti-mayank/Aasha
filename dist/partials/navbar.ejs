@@ -68,26 +68,63 @@
                 firebase.initializeApp(firebaseConfig);
                 </script>
 
+                // </script>
                 <!-- {{#if isAuthenticated}} -->
-                <li class="nav-item dropdown signed">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown signed" id="logout">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDrop"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class ="fas fa-user"></i>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDrop">
                       <li><a class="dropdown-item" href="/kyc">KYC</a></li>
-                      <li><a class="dropdown-item" href="/">Logout</a></li>
+                    <!--   <li><a class="dropdown-item" href="/">Logout</a></li> -->
+                      <button class="dropdown-item" type="submit"  onclick="logout()">Logout</button>
                   </ul>
                 </li>
                 <!-- {{else}} -->
                 <li class="nav-item nav-link unsigned">
-                <a href="/login">Login</a>
+                <a id="login" href="/login" >Login</a>
                 </li> 
                 <li class="nav-item nav-link unsigned">
-                <a href="/signup">Signup</a>
+                <a id="signin" href="/signup">Signup</a>
                 </li>
                 <!-- {{/if}}  -->
                 
             </ul>
+            
+
+            <script>
+
+            function logout()
+            {
+
+                firebase.auth().signOut().then(function(){
+                alert("signout successfull");
+                }, function (error) {
+                    alert("logout unsuccessful");
+                });
+
+            }
+            </script>
+
+    <script>
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+      $("#logout").show();
+      $("#login").hide();
+      $("#signin").hide();
+    //  window.location.href="userinfo"
+        // User is signed in.
+      } else {
+        $("#logout").hide();
+        $("#login").show();
+        $("#signin").show();
+        // No user is signed in.
+      }
+    });
+
+  </script>
+
+
             </div>
         </div>
     </nav>
