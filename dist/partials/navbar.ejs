@@ -68,23 +68,23 @@
                 firebase.initializeApp(firebaseConfig);
                 </script>
 
-                // </script>
+                </script>
                 <!-- {{#if isAuthenticated}} -->
-                <li class="nav-item dropdown signed" id="logout">
+                <li class="nav-item dropdown" id="logout">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDrop"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class ="fas fa-user"></i>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDrop">
-                      <li><a class="dropdown-item" href="/kyc">KYC</a></li>
+                      <li><a class="dropdown-item" href="https://www.karvykra.com/UPanSearchGlobalWithPanExempt.aspx" target="_blank">KYC</a></li>
                     <!--   <li><a class="dropdown-item" href="/">Logout</a></li> -->
                       <button class="dropdown-item" type="submit"  onclick="logout()">Logout</button>
                   </ul>
                 </li>
                 <!-- {{else}} -->
-                <li class="nav-item nav-link unsigned">
+                <li class="nav-item nav-link">
                 <a id="login" href="/login" >Login</a>
                 </li> 
-                <li class="nav-item nav-link unsigned">
+                <li class="nav-item nav-link">
                 <a id="signin" href="/signup">Signup</a>
                 </li>
                 <!-- {{/if}}  -->
@@ -98,7 +98,7 @@
             {
 
                 firebase.auth().signOut().then(function(){
-                alert("signout successfull");
+                    alert("Logout successful");
                 }, function (error) {
                     alert("logout unsuccessful");
                 });

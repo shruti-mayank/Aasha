@@ -268,15 +268,11 @@
         //   console.log("Not found");
         // });
         // window.location.replace('/blogpage?id=' + key);
-        firebase.database().ref('blogs/'+key).once('value').then(function(snapshot){
+        firebase.database().ref('blogs/').once('value').then(function(snapshot){
           window.location.replace('/blogPage');
         });
       }
     </script>
-
-
-
-
 
   <script>
     firebase.auth().onAuthStateChanged(function (user) {

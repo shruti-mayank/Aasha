@@ -129,9 +129,8 @@
             <label>Name</label>
             <input type="text" placeholder="Enter your Name" class="form-control" id="name" required><br>
             <label>Email</label>
-            <input type="text" placeholder="Enter your Email" class="form-control" id="email" required>
+            <input type="text" placeholder="Enter your Email" class="form-control" id="email" required><br>
             
-            <input type="hidden" placeholder="Enter your Email" class="form-control" id="kyc" required><br>
             <label for="gender">Gender</label>
             <select class="form-control" id="gender" name="gender" required>
               <option value="Male">Male</option>
@@ -141,6 +140,10 @@
 
             <label>Phone</label>
             <input type="text" placeholder="Enter Phone Number" class="form-control" id="phone" required><br>
+            
+            <input type="hidden" placeholder="Pan" class="form-control" id="pan" required><br>
+            <input type="hidden" placeholder="Aadhaar" class="form-control" id="aadhar" required>
+            <input type="hidden" placeholder="Passport" class="form-control" id="passport" required>
             <!--     <input type="submit" name="register" value="Register" id="register" class="p-2 px-4" style="background-color: #255B8A; color: #fff; border: 0px!important;"> -->
             <button class="btn btn-large px-4 py-1" type="submit" id="submitBtn" onclick="saveinfo()">Proceed</button>
 
@@ -178,7 +181,9 @@
               firebase.database().ref("Users/" + res).set({
                 user_name: document.getElementById("name").value,
                 user_email: document.getElementById("email").value,
-                user_kyc: document.getElementById("kyc").value,
+                user_pan: document.getElementById("pan").value,
+                user_aadhar: document.getElementById("aadhar").value,
+                user_passport: document.getElementById("passport").value,
                 user_gender: document.getElementById("gender").value,
                 user_phone: document.getElementById("phone").value
               });

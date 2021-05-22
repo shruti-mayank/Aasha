@@ -114,12 +114,40 @@
             window.location.href = '/choice';
         }
         function upload(){
+            // user_email = document.getElementById("email").value
             var pan = document.getElementById("myFile").files[0];
 
             var panName = pan.name;
         //    var res = panName.replace(/[.]/g,"-");
+            
             var storageRef = firebase.storage().ref('pancard/'+panName);
             var uploadTask = storageRef.put(pan);
+
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL){
+                firebase.database().ref('Users/').once('value').then(function(snapshot){
+                    var data =snapshot.val();
+                    console.log(data);
+                    for(let[key,value] of Object.entries(data)){
+                        // var email = user_email;
+                        
+                        firebase.database().ref("Users/" + user_email).set({
+                            user_pan: downloadURL
+                        });
+                    }; 
+                })
+            });  
+            
+            var fb = firebase.database.ref('Users/');
+
+            /**
+             * @param {string} user_email
+             * @return {Object} the object contains zero or more user records, the keys are the users' ids
+             */
+            function findUsersMatchingEmail( user_email, callback ) {
+                fb.child('Users/').orderByChild('user_email').equalTo(emailAddress).once('value', function(snap) {
+                    callback( snap.val() );
+                });
+            }
             
             uploadTask.on('state_changed', function(snapshot){
                 var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
