@@ -304,15 +304,19 @@
               "color": "#0e6621"
           }
         };
-        var propay = new Razorpay(options);
-        propay.open();
-      }
+        firebase.auth().onAuthStateChanged(function (user) {
+          if (user) {
+            var propay = new Razorpay(options);
+            propay.open();
+          } else {
+              alert("Please Login first");
+            }
+          });  
 
+      }
       function savetoDB(response){
         console.log(response);
-      }
-
-      
+      }    
     
     </script>
 
